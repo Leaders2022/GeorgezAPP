@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.george.georgezapp.navigation.ROUTE_LOGIN
 import com.george.georgezapp.navigation.ROUTE_REGISTER
 
 
@@ -125,7 +126,7 @@ fun Register_Screen(navController: NavHostController) {
             fontStyle = FontStyle.Italic
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick =  {/*TODO*/ },
+        Button(onClick =  {navController.navigate(ROUTE_LOGIN)},
             modifier = Modifier.width(200.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Cyan)){

@@ -8,14 +8,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.george.georgezapp.ui.theme.screens.Dashboard_Screen
 import com.george.georgezapp.ui.theme.screens.home.Home_Screen
 import com.george.georgezapp.ui.theme.screens.login.Login_Screen
 import com.george.georgezapp.ui.theme.screens.register.Register_Screen
+import com.george.georgezapp.ui.theme.screens.splash.Splash_Screen
 
 @Composable
 fun AppNavHost (modifier: Modifier=Modifier,
                 navController:NavHostController= rememberNavController(),
-                startDestination: String= ROUTE_HOME) {
+                startDestination: String= ROUTE_SPLASH) {
     NavHost(navController =navController, modifier = modifier,
         startDestination = startDestination){
 
@@ -29,6 +31,13 @@ fun AppNavHost (modifier: Modifier=Modifier,
         composable(ROUTE_REGISTER){
             Register_Screen(navController)
         }
+        composable(ROUTE_SPLASH){
+            Splash_Screen(navController)
+        }
+        composable(ROUTE_DASHBOARD){
+            Dashboard_Screen()
+        }
+
 
     }
 

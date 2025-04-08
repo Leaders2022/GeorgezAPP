@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.george.georgezapp.R
+import com.george.georgezapp.navigation.ROUTE_DASHBOARD
 import com.george.georgezapp.navigation.ROUTE_LOGIN
 import com.george.georgezapp.navigation.ROUTE_REGISTER
 
@@ -37,10 +38,12 @@ fun Home_Screen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top) {
         //put a text inside here
-        Text("Welcome to George's App",
+        Spacer(modifier = Modifier.height(50.dp))
+
+        Text("Welcome to Coffee House",
             fontSize = 30.sp,
             fontFamily = FontFamily.SansSerif,
-            color = Color.Red,
+            color = Color.Black,
             fontStyle = FontStyle.Italic)
         Spacer(modifier = Modifier.height(30.dp))
         Image(painter = painterResource(id = R.drawable.img),
@@ -49,9 +52,9 @@ fun Home_Screen(navController: NavHostController) {
                 .fillMaxWidth()
                 .height(100.dp))
         Text("Enjoy the best coffee in town.",
-            fontSize = 30.sp,
+            fontSize = 20.sp,
             fontFamily = FontFamily.SansSerif,
-            color = Color.Red,
+            color = Color.Black,
             fontStyle = FontStyle.Italic)
 
         Spacer(modifier = Modifier.height(30.dp))
@@ -69,8 +72,13 @@ fun Home_Screen(navController: NavHostController) {
             modifier = Modifier.width(200.dp)) {
             Text(text = "Register",
                 fontSize = 20.sp)
+        }
+        Spacer(modifier = Modifier.height(30.dp))
 
-
+        Button(onClick = {navController.navigate(ROUTE_DASHBOARD)},
+            modifier = Modifier.width(200.dp)) {
+            Text(text = "Dashboard",
+                fontSize = 20.sp)
         }
 
 
